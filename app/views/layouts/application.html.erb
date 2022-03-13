@@ -11,13 +11,13 @@
 
   <body>
     <div>
-      <%= flash[:notice] %>
-    </div>
-    <div>
       <a href="/">Home</a>
       <%#= button_to "Logout", "/sessions/logout", method: :delete %>
       <a href="/sessions/new">Login</a>
       <a href="/users/new">Signup</a>
+    </div>
+    <div>
+      <%= flash[:notice] %>
     </div>
 
     <%= yield %>
