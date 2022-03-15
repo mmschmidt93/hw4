@@ -22,6 +22,4 @@ test:
 
 production:
   <<: *default
-  database: hw4_production
-  username: hw4
-  password: <%= ENV["HW4_DATABASE_PASSWORD"] %>
+  database: db/production.sqlite3
