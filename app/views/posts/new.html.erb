@@ -1,24 +1,32 @@
-<h1>New Post</h1>
+<h1 class="ms-4">New Post</h1>
 
-<%= form_with model: @post do |form| %>
-  <p>
-    <%= form.label "title" %>
-    <%= form.text_field "title" %>
-  </p>
-  <p>
-    <%= form.label "description" %>
-    <%= form.text_field "description" %>
-  </p>
-  <p>
-    <%= form.label "posted_on" %>
-    <%= form.date_field "posted_on" %>
-  </p>
-  <div class="mb-4">
-    <%= form.label "uploaded_image", class: "form-label"%>
-    <%= form.file_field "uploaded_image", class:"form-control"%>
-  </div>
-  <p>
-    <%= form.submit %>
-  </p>
-  <%= form.hidden_field "place_id" %>
+<% if @current_user %>
+  <%= form_with model: @post do |form| %>
+    <div class="ms-4 mb-4">
+      <%= form.label "title" %>
+      <%= form.text_field "title" %>
+    </div>
+    <div class="ms-4 mb-4">
+      <%= form.label "description" %>
+      <%= form.text_field "description" %>
+    </div>
+    <div class="ms-4 mb-4">
+      <%= form.label "posted_on" %>
+      <%= form.date_field "posted_on" %>
+    </div>
+
+    <div class="ms-4 mb-4">
+      <%= form.label "uploaded_image", class: "form-label"%>
+      <%= form.file_field "uploaded_image", accept: "image/jpg, image/jpeg, image/png", class:"form-control"%>
+    </div>
+    <div class="ms-4">
+    <%= form.submit "Create Post", class: "btn btn-success" %>
+    </div>
+    <%= form.hidden_field "place_id" %>
+  <% end %>
+
+<% else %>
+      <div class="ms-4">
+      You must first <a href="/sessions/net">Login to post.</a>
+      </div>
 <% end %>

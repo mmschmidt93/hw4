@@ -7,16 +7,16 @@
 <body>
   <div>
 
-    <h1 class="pt-4 pb-2"> Places</h1>
+    <h1 class="pt-2 pb-2 ms-4"> Places</h1>
   
     <ul>
       <% for place in @places %>
-        <li class="pb-2"><a href="/places/<%= place.id %>"><%= place.name %></a></li>
+        <li class="ms-4 pb-2"><a href="/places/<%= place.id %>"><%= place.name %></a></li>
       <% end %>
     </ul>
 
     <p>
-      <a href="/places/new" class="btn btn-primary">New place</a>
+      <a href="/places/new" class="btn btn-primary ms-4">New place</a>
     </p>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
